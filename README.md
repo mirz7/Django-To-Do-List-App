@@ -221,44 +221,19 @@ Contributions are welcome! Please follow these steps:
 4. Push to the branch (`git push origin feature/YourFeature`)
 5. Open a Pull Request
 
-## 📝 License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ## 👤 Author
 
 **mirz7**
 
 - GitHub: [@mirz7](https://github.com/mirz7)
-- Repository: [Django-To-Do-List-App](https://github.com/mirz7/Django-To-Do-List-App)
-
 ## 🙏 Acknowledgments
 
 - Django Documentation
 - Django Community
 - Open Source Contributors
 
-## 📞 Support
-
-If you encounter any issues or have questions:
-
-1. Check the [Issues](https://github.com/mirz7/Django-To-Do-List-App/issues) page
-2. Create a new issue with detailed description
-3. Contact the repository owner
-
-## 🔮 Future Enhancements
-
-- [ ] Task collaboration and sharing
-- [ ] Email notifications for due tasks
-- [ ] Mobile app version
-- [ ] Task statistics and analytics
-- [ ] Dark mode toggle
-- [ ] Export tasks to PDF/CSV
-- [ ] Integration with calendar apps
-- [ ] Recurring tasks functionality
-
----
-
 
 **Made with ❤️ using Django**
+
 
