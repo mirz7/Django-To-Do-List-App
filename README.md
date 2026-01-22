@@ -5,9 +5,7 @@ A full-featured, responsive To-Do List web application built with Django, design
 
 ## 🎥 Demo Video
 
-
-
-> Replace `https://github.com/user-attachments/assets/275190d6-0169-4fcd-aa54-16836744cc4f` with your actual demo video link
+>https://github.com/user-attachments/assets/275190d6-0169-4fcd-aa54-16836744cc4f
 
 ## ✨ Features
 
@@ -263,3 +261,4 @@ If you encounter any issues or have questions:
 
 
 **Made with ❤️ using Django**
+
