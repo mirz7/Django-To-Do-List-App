@@ -1,4 +1,4 @@
-﻿# Django-To-Do-List-App
+
 # Django To-Do List App 📝
 
 A full-featured, responsive To-Do List web application built with Django, designed to help users organize and manage their daily tasks efficiently.
@@ -235,5 +235,6 @@ Contributions are welcome! Please follow these steps:
 
 
 **Made with ❤️ using Django**
+
 
 
