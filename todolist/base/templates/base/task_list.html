@@ -1,0 +1,66 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<div class="page-header">
+    <div class="header-content">
+        <div class="user-info">
+            <h1 class="welcome-title">Hello {{request.user|title}}</h1>
+            <p class="task-count">You have <span class="count-badge">{{count}}</span> incomplete task{{count|pluralize:"s"}}</p>
+        </div>
+        <div class="header-actions">
+            {% if request.user.is_authenticated %}
+            <a href="{% url 'logout' %}" class="btn btn-logout">Logout</a>
+            {% else %}
+            <a href="{% url 'login' %}" class="btn btn-login">Login</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<div class="content-section">
+    <div class="section-header">
+        <h2 class="section-title">My Tasks</h2>
+        <a href="{% url 'task-create' %}" class="btn btn-primary">+ Create New Task</a>
+    </div>
+
+    <div class="search-container">
+        <form method="GET" class="search-form">
+            <input type="text" name="search-area" placeholder="Search tasks..." value="{{search_input}}" class="search-input" />
+            <button type="submit" class="btn btn-search">Search</button>
+        </form>
+    </div>
+
+    <div class="tasks-container">
+        {% if tasks %}
+        <table class="tasks-table">
+            <thead>
+                <tr>
+                    <th class="col-task">Task</th>
+                    <th class="col-actions">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for task in tasks %}
+                <tr class="task-row">
+                    <td class="task-title">
+                        <span class="task-text">{{task.title}}</span>
+                    </td>
+                    <td class="task-actions">
+                        <a href="{% url 'task-update' task.id %}" class="action-btn btn-edit">Edit</a>
+                        <a href="{% url 'task-delete' task.id %}" class="action-btn btn-delete">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <div class="empty-state">
+            <div class="empty-icon">📋</div>
+            <h3 class="empty-title">No tasks yet</h3>
+            <p class="empty-text">Create your first task to get started!</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock content %}

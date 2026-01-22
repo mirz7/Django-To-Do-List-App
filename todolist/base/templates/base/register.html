@@ -1,0 +1,57 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<div class="auth-container">
+    <div class="auth-card">
+        <div class="auth-header">
+            <h1 class="auth-title">Create Account</h1>
+            <p class="auth-subtitle">Sign up to get started</p>
+        </div>
+        
+        <form method="POST" class="auth-form">
+            {% csrf_token %}
+            
+            {% if form.errors %}
+            <div class="form-errors">
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <p class="error-message">{{ error }}</p>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+            {% endif %}
+            
+            <div class="form-group">
+                <label for="{{ form.username.id_for_label }}">Username</label>
+                {{ form.username }}
+                {% if form.username.help_text %}
+                <small class="help-text">{{ form.username.help_text|safe }}</small>
+                {% endif %}
+            </div>
+            
+            <div class="form-group">
+                <label for="{{ form.password1.id_for_label }}">Password</label>
+                {{ form.password1 }}
+                {% if form.password1.help_text %}
+                <small class="help-text">{{ form.password1.help_text|safe }}</small>
+                {% endif %}
+            </div>
+            
+            <div class="form-group">
+                <label for="{{ form.password2.id_for_label }}">Confirm Password</label>
+                {{ form.password2 }}
+                {% if form.password2.help_text %}
+                <small class="help-text">{{ form.password2.help_text|safe }}</small>
+                {% endif %}
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-full">Register</button>
+        </form>
+        
+        <div class="auth-footer">
+            <p class="auth-link-text">Already have an account? <a href="{% url 'login' %}" class="auth-link">Login</a></p>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
